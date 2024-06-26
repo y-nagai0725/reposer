@@ -1,0 +1,20 @@
+@use "../global" as *;
+
+html {
+  font-size: calc(10 / 375 * 100vw);
+
+  @media screen and (min-width: 768px) {
+    font-size: calc(10 / 768 * 100vw);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(10 / 1920 * 100vw);
+  }
+}
+
+body {
+  font-family: $noto-sans;
+  font-weight: 400;
+  background: $bg-white;
+  color: $black;
+}

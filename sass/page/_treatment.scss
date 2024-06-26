@@ -1,0 +1,192 @@
+@use "../global" as *;
+
+#treatment {
+  .mv {
+    margin-top: 9.3rem;
+    margin-bottom: 4.8rem;
+    opacity: 0;
+
+    &.showed {
+      opacity: 1;
+    }
+
+    &.first {
+      animation: mvShow 0.8s 0.6s forwards;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-top: 11.2rem;
+      margin-bottom: 10.6rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 20.2rem;
+      margin-bottom: 13.9rem;
+    }
+
+    &__img {
+      @include img-base;
+    }
+  }
+
+  .treatment-area {
+    background: $dark-red;
+    padding: 3.6rem 2.2rem 5.2rem;
+
+    @media screen and (min-width: 768px) {
+      padding: 9.5rem 6rem 5.8rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 15.2rem 36rem 11.2rem;
+    }
+
+    &__ttl {
+      @include section-title($white);
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 3rem;
+
+      //準備中用css
+      height: 300px;
+      position: relative;
+      &::before {
+        content: "公開準備中";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $white;
+        font-size: 3.5rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+      }
+
+      @media screen and (min-width: 768px) {
+        gap: 6rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        gap: 10rem;
+      }
+    }
+
+    &__list {
+      list-style-type: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: $white;
+      padding: 3.4rem 2.3rem;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3.5rem 3.6rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 6.6rem 6.4rem;
+      }
+    }
+
+    &__box-left {
+      margin-bottom: 3.7rem;
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 0;
+        width: 48%;
+      }
+    }
+
+    &__sub-ttl {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 2rem;
+      text-align: center;
+
+      @media screen and (min-width: 768px) {
+        margin-bottom: 2.9rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 3.6rem;
+        margin-bottom: 5.9rem;
+      }
+    }
+
+    &__txt {
+      font-size: 1.3rem;
+      font-weight: 300;
+      line-height: 1.5;
+      letter-spacing: 0.03em;
+      margin-bottom: 1.4rem;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 2.4rem;
+        margin-bottom: 2.4rem;
+      }
+    }
+
+    &__box-right {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 1.9rem;
+        height: 1.9rem;
+        background: url(../images/treatment/arrow.svg) center center / cover;
+      }
+
+      @media screen and (min-width: 768px) {
+        width: 48%;
+      }
+
+      @media screen and (min-width: 1280px) {
+        &::before {
+          width: 3.5rem;
+          height: 3.5rem;
+        }
+      }
+    }
+
+    &__img-wrap {
+      width: 40%;
+      height: 24.2rem;
+      background: #d9d9d9;
+
+      @media screen and (min-width: 1280px) {
+        width: 43%;
+        height: 45rem;
+      }
+    }
+
+    &__img {
+      @include img-base;
+      height: 100%;
+    }
+  }
+}

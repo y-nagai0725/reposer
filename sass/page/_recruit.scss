@@ -1,0 +1,160 @@
+@use "../global" as *;
+
+#recruit {
+  .recruit-area {
+    background: $dark-red;
+    padding: 9.5rem 2.2rem 5.2rem;
+    opacity: 0;
+
+    &.showed {
+      opacity: 1;
+    }
+
+    &.first {
+      animation: mvShow 0.8s 0.6s forwards;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 9.5rem 6rem 5.8rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 15.2rem 36rem 11.2rem;
+    }
+
+    &__ttl {
+      @include section-title($white);
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+
+    &__inner {
+      margin-bottom: 4rem;
+      padding: 3.4rem 2.3rem;
+      background: $white;
+
+      @media screen and (min-width: 768px) {
+        flex-direction: row;
+        justify-content: space-between;
+        margin-bottom: 6rem;
+        padding: 3.5rem 3.6rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        margin-bottom: 8rem;
+        padding: 7rem 8rem;
+      }
+    }
+
+    &__list-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8rem;
+
+      @media screen and (min-width: 768px) {
+        gap: 11rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        gap: 14rem;
+      }
+    }
+
+    &__dl {
+      border-top: 1px solid $black;
+      border-bottom: 1px solid $black;
+    }
+
+    &__rows {
+      padding: 1.6rem 0;
+      border-bottom: 1px dotted $black;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 2.4rem 0;
+        flex-direction: row;
+        align-items: center;
+        gap: 0;
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 3.2rem;
+      }
+    }
+
+    &__sub {
+      font-size: 1.8rem;
+      font-weight: 700;
+
+      @media screen and (min-width: 768px) {
+        width: 33%;
+        font-size: 2.2rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 2.6rem;
+      }
+    }
+
+    &__txt {
+      font-size: 1.8rem;
+      line-height: 1.8;
+      position: relative;
+
+      @media screen and (min-width: 768px) {
+        width: 67%;
+        font-size: 2.2rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: -2rem;
+          transform: translateY(-50%);
+          width: 1px;
+          height: 100%;
+          border-left: 1px dotted $black;
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 2.6rem;
+
+        &::before {
+          left: -4rem;
+        }
+      }
+    }
+
+    &__tel {
+      color: $white;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.8;
+      text-align: center;
+
+      @media screen and (min-width: 768px) {
+        font-size: 3.4rem;
+        line-height: 1;
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 4rem;
+      }
+    }
+
+    &__sp-br {
+      @media screen and (min-width: 768px) {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+@use "../global" as *;
+
+#staff {
+  .mv {
+    margin-top: 9.3rem;
+    margin-bottom: 4.8rem;
+    opacity: 0;
+
+    &.showed {
+      opacity: 1;
+    }
+
+    &.first {
+      animation: mvShow 0.8s 0.6s forwards;
+    }
+
+    @media screen and (min-width: 768px) {
+      margin-top: 11.2rem;
+      margin-bottom: 10.6rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-top: 20.2rem;
+      margin-bottom: 13.9rem;
+    }
+
+    &__img {
+      @include img-base;
+    }
+  }
+
+  .staff-area {
+    padding: 0 2.4rem;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 2.7rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 0 33rem;
+    }
+
+    &__ul {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+
+      @media screen and (min-width: 768px) {
+        gap: 3.3rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        gap: 10rem;
+      }
+    }
+
+    &__list {
+      list-style-type: none;
+      background: rgba(206, 70, 177, 0.1);
+      padding: 2.9rem 1.6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2.2rem;
+
+      @media screen and (min-width: 768px) {
+        padding: 2.2rem 3.7rem;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 7.9rem 7.7rem 7.9rem 12.4rem;
+      }
+    }
+
+    &__img-wrap {
+      width: 19.8rem;
+
+      @media screen and (min-width: 768px) {
+        width: 28%;
+      }
+    }
+
+    &__img {
+      @include img-base;
+    }
+
+    &__table {
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+      @media screen and (min-width: 768px) {
+        width: 65%;
+      }
+
+      @media screen and (min-width: 1280px) {
+      }
+    }
+
+    &__sub {
+      width: 20%;
+      padding: 0.8rem 0;
+      background: rgba(116, 19, 50, 0.23);
+      border-bottom: 1px solid $black;
+      font-size: 1.8rem;
+      font-weight: 300;
+      line-height: 1.5;
+      text-align: center;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 1.3rem 0;
+        font-size: 2rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 2.5rem 0;
+        font-size: 2.8rem;
+      }
+    }
+
+    &__txt {
+      width: 80%;
+      padding: 0.8rem 1rem;
+      background: $white;
+      border-bottom: 1px solid $black;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 1.5;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &.lg-height {
+        min-height: 10rem;
+      }
+
+      @media screen and (min-width: 768px) {
+        padding: 1.3rem 2.5rem;
+        font-size: 1.8rem;
+
+        &.lg-height {
+          min-height: 16rem;
+        }
+      }
+
+      @media screen and (min-width: 1280px) {
+        padding: 2.5rem 3.1rem;
+        font-size: 2.5rem;
+
+        &.lg-height {
+          min-height: 27rem;
+        }
+      }
+    }
+  }
+}

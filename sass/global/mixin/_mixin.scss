@@ -1,0 +1,82 @@
+@use "../setting" as *;
+
+//画像設定
+@mixin img-base {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+//見出しスタイル
+@mixin section-title($color: $black) {
+  margin-bottom: 3.2rem;
+  color: $color;
+  font-family: $inter;
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2.4rem;
+
+  &::before,
+  &::after {
+    content: "";
+    width: 30px;
+    height: 5px;
+    background: $black;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 7.2rem;
+    font-size: 4rem;
+
+    &::before,
+    &::after {
+      width: 40px;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    margin-bottom: 10rem;
+    font-size: 6rem;
+    gap: 4rem;
+  }
+}
+
+//moreボタンスタイル
+@mixin btn-base {
+  margin: 0 auto;
+  width: 10rem;
+  height: 3.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3.9rem;
+  border: 2px solid $pink;
+  background: $pink;
+  color: $white;
+  font-family: $inter;
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.4s;
+
+  &:hover {
+    background: $white;
+    color: $pink;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 15rem;
+    height: 4.5rem;
+    font-size: 2.2rem;
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: 17rem;
+    height: 6rem;
+    font-size: 2.8rem;
+  }
+}

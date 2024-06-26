@@ -1,0 +1,21 @@
+@use "../global" as *;
+
+.js-fadeIn {
+  opacity: 0;
+  transition: 1s;
+
+  &.js-active {
+    opacity: 1;
+  }
+}
+
+.js-fadeUp {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+
+  &.js-active {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

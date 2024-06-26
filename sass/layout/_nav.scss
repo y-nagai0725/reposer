@@ -1,0 +1,142 @@
+@use "../global" as *;
+
+.gnav {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $gray;
+  transition: 0.4s;
+
+  &.is-active {
+    transform: translateX(-100%);
+  }
+
+  @media screen and (min-width: 1280px) {
+    width: auto;
+    height: auto;
+    position: static;
+    background: none;
+  }
+
+  &__ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    @media screen and (min-width: 768px) {
+      gap: 32px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      flex-direction: row;
+      gap: 72px;
+      margin-right: 72px;
+    }
+
+    @media screen and (min-width: 1440px) {
+      gap: 80px;
+      margin-right: 80px;
+    }
+  }
+
+  &__li {
+    list-style-type: none;
+  }
+
+  &__link {
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    color: $white;
+    font-family: $inter;
+    font-size: 22px;
+    font-weight: 700;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: $black;
+      transition: 0.4s;
+      transform: scaleX(0);
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 24px;
+    }
+
+    @media screen and (min-width: 1280px) {
+      color: $black;
+      font-size: 20px;
+    }
+  }
+}
+
+.hamburger-menu {
+  cursor: pointer;
+  width: 100px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  background: $dark-red;
+  position: relative;
+  z-index: 100;
+
+  @media screen and (min-width: 1280px) {
+    display: none;
+  }
+
+  $parent: &;
+
+  &.opened {
+    #{$parent}__top {
+      top: 50%;
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    #{$parent}__middle {
+      opacity: 0;
+    }
+
+    #{$parent}__bottom {
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+    }
+  }
+
+  &__top,
+  &__middle,
+  &__bottom {
+    position: absolute;
+    width: 45px;
+    height: 1px;
+    background: $white;
+    transform: translateY(-50%);
+    transition: 0.4s;
+  }
+
+  &__top {
+    top: 35%;
+  }
+
+  &__middle {
+    top: 50%;
+  }
+
+  &__bottom {
+    top: 65%;
+  }
+}

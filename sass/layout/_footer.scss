@@ -1,0 +1,238 @@
+@use "../global" as *;
+
+.footer {
+  overflow: hidden;
+  position: relative;
+  padding-top: 3.2rem;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 30%;
+    width: 75rem;
+    height: 75rem;
+    background-image: url(../images/common/footer_bg.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    z-index: -1;
+    animation: bgRotate 380s linear infinite;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 7.5rem;
+
+    &::before {
+      left: 35%;
+      width: 115rem;
+      height: 115rem;
+    }
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding-top: 24rem;
+
+    &::before {
+      left: 45%;
+      width: 235rem;
+      height: 235rem;
+    }
+  }
+
+  .access {
+    margin-bottom: 3.2rem;
+
+    @media screen and (min-width: 768px) {
+      margin-bottom: 7.5rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      margin-bottom: 24rem;
+    }
+
+    &__ttl {
+      @include section-title;
+    }
+
+    &__map-wrap {
+      iframe {
+        width: 100%;
+        aspect-ratio: 375/270;
+
+        @media screen and (min-width: 768px) {
+          aspect-ratio: 768/400;
+        }
+
+        @media screen and (min-width: 1280px) {
+          aspect-ratio: 1920/670;
+        }
+      }
+    }
+  }
+
+  &__inner {
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+    position: relative;
+
+    @media screen and (min-width: 768px) {
+      padding: 0 8rem;
+      margin-bottom: 4.5rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 0 24rem;
+      margin-bottom: 24rem;
+    }
+  }
+
+  &__logo-link {
+    width: 14rem;
+    margin-bottom: 0.8rem;
+    display: block;
+    padding: 10px 0;
+    text-decoration: none;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+
+    @media screen and (min-width: 768px) {
+      width: 18rem;
+      margin-bottom: 1.4rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      width: 24rem;
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__logo-img {
+    @include img-base;
+  }
+
+  &__info {
+    & p {
+      font-size: 1.4rem;
+      line-height: 1.5;
+
+      @media screen and (min-width: 768px) {
+        font-size: 1.8rem;
+      }
+
+      @media screen and (min-width: 1280px) {
+        font-size: 2.2rem;
+      }
+    }
+  }
+
+  &__address-wrap {
+    display: flex;
+    gap: 2em;
+  }
+
+  &__br {
+    @media screen and (min-width: 1280px) {
+      display: none;
+    }
+  }
+
+  &__sns-wrap {
+    position: absolute;
+    top: 0;
+    right: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    row-gap: 0.8rem;
+    width: 13.5rem;
+
+    &::after {
+      content: "";
+      display: block;
+      width: 29%;
+    }
+
+    @media screen and (min-width: 768px) {
+      top: 50%;
+      right: 8rem;
+      transform: translateY(-50%);
+      flex-wrap: nowrap;
+      flex-direction: column;
+      justify-content: center;
+      row-gap: 0.8rem;
+      width: 6.4rem;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      right: 24rem;
+      row-gap: 1rem;
+      width: 8rem;
+    }
+  }
+
+  &__list {
+    width: 29%;
+    list-style-type: none;
+
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__sns-link {
+    display: block;
+    text-decoration: none;
+    transition: 0.4s;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+
+  &__sns-img {
+    @include img-base;
+  }
+
+  &__copyright-wrap {
+    background: $black;
+    text-align: center;
+    padding: 1.3rem 0;
+
+    @media screen and (min-width: 768px) {
+      padding: 3rem 0;
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 4.2rem 0;
+    }
+  }
+
+  &__copyright {
+    color: $white;
+    font-family: $inter;
+    font-size: 1.2rem;
+    line-height: 1.5;
+
+    @media screen and (min-width: 768px) {
+      font-size: 1.6rem;
+    }
+
+    @media screen and (min-width: 1280px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  &__copyright-br {
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+}

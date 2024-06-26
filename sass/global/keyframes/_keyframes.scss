@@ -1,0 +1,54 @@
+@use "../setting" as *;
+
+//
+@keyframes mvShow {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+
+//
+@keyframes bgMoveSp {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 20rem 0;
+  }
+}
+
+@keyframes bgMoveTab {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 45rem 0;
+  }
+}
+
+@keyframes bgMovePc {
+  0%{
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 110rem 0;
+  }
+}
+
+//header
+@keyframes showHeader {
+  100%{
+    transform: translateY(0);
+  }
+}
+
+
+//footer背景文字アニメーション
+@keyframes bgRotate {
+  100% {
+    transform: rotate(1900deg);
+  }
+}
